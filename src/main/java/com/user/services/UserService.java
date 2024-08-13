@@ -69,7 +69,6 @@ public class UserService {
 		}
 
 		// Check if user already exists
-
 		if (userRepository.existsByEmail(user.getEmail())) {
 			response.put("status", "FAILED");
 			response.put("message", "Email already exists");
@@ -79,8 +78,6 @@ public class UserService {
 		// Generate UID with 10 random digits
 		String userId = ValidateUser.generateUserId();
 		user.setUserId(userId);
-
-		// Hash password (simple example, replace with real hash in production)
 
 		// Hash password
 		try {
